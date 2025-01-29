@@ -20,7 +20,8 @@ from mlflow.models import infer_signature
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 
-
+import dagshub
+dagshub.init(repo_owner='ashishmaurya57', repo_name='mlflow_experiment', mlflow=True)
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
